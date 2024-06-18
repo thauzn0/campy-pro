@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'League Spartan', sans-serif;
+}
+
+.product-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 200px 20px;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.product-images-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-images-sidebar .prev-button,
+.product-images-sidebar .next-button {
+  background-color: #000000; /* Buton rengi */
+  color: #fff; /* Ok rengi */
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.product-images-sidebar .prev-button:hover,
+.product-images-sidebar .next-button:hover {
+  background-color: #000000;
+}
+
+.product-images-sidebar .sidebar-image {
+  width: 120px; /* Genişlik küçültüldü */
+  height: auto;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  border-radius: 20px;
+}
+
+.product-images-sidebar .sidebar-image.active,
+.product-images-sidebar .sidebar-image:hover {
+  opacity: 1;
+}
+
+.product-info {
+  flex: 1;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.product-info h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.product-info h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.product-info p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.product-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.product-info ul li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.main-image-container {
+  flex: 1;
+  text-align: center;
+  overflow: hidden; /* Taşan kısmı gizle */
+}
+
+.main-image-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Geçiş efekti */
+}
+
+.main-image-wrapper img {
+  min-width: 100%; /* Her bir görüntü tam genişlikte olmalı */
+}
+
+.main-image-container .main-image {
+  width: 80%; /* Genişlik küçültüldü */
+  height: auto;
+  max-height: 500px; /* Yükseklik küçültüldü */
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.platforms {
+  margin-top: 20px;
+  position: relative;
+}
+
+.platform-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #000000; /* Siyah renk */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.platform-button:hover {
+  background-color: #333;
+}
+
+.dropdown-menu {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 50px; /* Platform butonunun hemen altında */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10; /* Üstte görünmesi için */
+}
+
+.dropdown-menu button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 5px;
+}
+
+.dropdown-menu button:hover {
+  background-color: #333;
+}
+
+@media (max-width: 768px) {
+  .product-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .product-info {
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+
+  .main-image-container .main-image {
+    max-height: 200px;
+  }
+
+  .dropdown-menu {
+    flex-direction: column;
+    top: 40px;
+    transform: translateX(0);
+  }
+
+  .dropdown-menu button {
+    margin: 5px 0;
+  }
+}

@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'League Spartan', sans-serif;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: flex-start; /* Yazıları sola yaslamak için */
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  color: #fff;
+  text-align: left; /* Yazıları sola yaslamak için */
+  padding: 0 20px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Siyah filtre */
+  z-index: -1;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 600px;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 4rem; /* Font boyutunu büyütmek için */
+  margin-bottom: 20px;
+  line-height: 1.2; /* Satır yüksekliği */
+  font-family: 'League Spartan', sans-serif;
+}
+
+.cta-button {
+  padding: 15px 30px; /* Daha büyük düğme boyutu */
+  font-size: 1.2rem; /* Font boyutunu biraz büyütmek için */
+  color: #fff; /* Beyaz yazı rengi */
+  background-color: #000; /* Siyah parlak düğme rengi */
+  border: none;
+  border-radius: 50px; /* Yuvarlak köşeler */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Geçiş efekti ve hover efekti */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Hafif gölge efekti */
+}
+
+.cta-button:hover {
+  background-color: #333; /* Hover sırasında daha koyu siyah */
+  transform: scale(1.05); /* Hover sırasında hafif büyüme efekti */
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 3rem; /* Mobil için font boyutunu ayarla */
+  }
+
+  .cta-button {
+    font-size: 1rem; /* Mobil için düğme boyutunu ayarla */
+  }
+}

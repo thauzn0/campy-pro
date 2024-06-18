@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'League Spartan', sans-serif;
+}
+
+.core-values {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 120px 20px; /* Üst ve alt padding */
+  background-color: #000; /* Arka plan rengi siyah */
+  color: #fff; /* Metin rengi beyaz */
+}
+
+.value-section {
+  flex: 1;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.value-icon {
+  font-size: 3rem;
+  color: #fff; /* İkon rengi beyaz */
+  margin-bottom: 20px;
+}
+
+.value-section h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.value-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.divider {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.divider hr {
+  width: 1px;
+  height: 80%;
+  background-color: #fff; /* Çizgi rengi beyaz */
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .core-values {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .value-section {
+    padding-bottom: 40px;
+  }
+
+  .value-section:not(:last-child) {
+    border-bottom: 1px solid #fff; /* Alt çizgi rengi beyaz */
+    margin-bottom: 40px;
+  }
+}

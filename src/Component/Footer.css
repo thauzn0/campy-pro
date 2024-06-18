@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap');
+
+.footer {
+  background-color: #ffffff; /* Arkaplan rengi beyaz */
+  color: #000000; /* Yazı rengi siyah */
+  padding: 40px 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 10px;
+}
+
+.footer-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-family: 'League Spartan', sans-serif;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #ff4500; /* Hover rengini turuncu yaptım */
+}
+
+.email-subscription {
+  display: flex;
+}
+
+.email-subscription input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-right: none;
+  flex: 1;
+  border-radius: 5px 0 0 5px;
+}
+
+.email-subscription button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.email-subscription button:hover {
+  background-color: #333333;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: start;
+  margin-top: 20px;
+}
+
+.social-icons svg {
+  font-size: 2rem;
+  margin-right: 10px;
+  color: #000000;
+  transition: color 0.3s ease;
+}
+
+.social-icons svg:hover {
+  color: #ff4500;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.discount-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ff4500;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.discount-button:hover {
+  background-color: #e63900;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    text-align: center;
+  }
+
+  .footer-section {
+    margin: 20px 0;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+
+  .footer-bottom p {
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap');
+
+.founder-message {
+  padding: 100px 20px;
+  background-color: #000000;
+  color: #ffffff; /* Yazı rengi beyaz yapıldı */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.founder-image img {
+  width: 600px; /* Fotoğraf büyütüldü */
+  height: auto;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.founder-hr {
+  width: 2px;
+  height: 100%;
+  background-color: #ffffff; /* Çizgi rengi beyaz yapıldı */
+  margin: 0 20px;
+}
+
+.founder-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-family: 'League Spartan', sans-serif;
+}
+
+.founder-text p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-family: 'League Spartan', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .founder-message {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .founder-image img {
+    width: 80%;
+    margin: 0 auto 20px auto;
+  }
+
+  .founder-hr {
+    display: none;
+  }
+
+  .founder-text h2 {
+    font-size: 2rem;
+  }
+
+  .founder-text p {
+    font-size: 1rem;
+  }
+}
