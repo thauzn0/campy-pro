@@ -1,27 +1,22 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './Component/Header';
-import Hero from './Component/Hero';
-import AboutUs from './Component/AboutUs';
-import CoreValues from './Component/CoreValues';
-import ProductSection from './Component/ProductSection';
-import FounderMessage from './Component/FounderMessage';
+import Home from './Pages/Home'; // Home sayfası
+import Contact from './Pages/Contact'; // Contact sayfası
 import Footer from './Component/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <div id="hero">
-        <Hero />
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Footer />
       </div>
-      <AboutUs />
-      <CoreValues />
-      <div id="products">
-        <ProductSection />
-      </div>
-      <FounderMessage />
-      <Footer />
-    </div>
+    </Router>
   );
 }
 

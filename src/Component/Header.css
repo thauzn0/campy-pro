@@ -17,7 +17,7 @@ body {
   width: 100%;
   top: 0;
   z-index: 1000;
-  transition: background-color 0.3s ease; /* Geçiş efekti */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Geçiş efekti */
 }
 
 .header.scrolled {
@@ -38,14 +38,15 @@ body {
   padding: 0;
 }
 
-.nav-links a {
+.nav-links a, .nav-links span {
   color: inherit; /* Metin rengini header'ın renginden al */
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
+  cursor: pointer; /* Tıklama imlecini ayarla */
 }
 
-.nav-links a:hover {
+.nav-links a:hover, .nav-links span:hover {
   color: #61dafb;
 }
 
