@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.css';
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -21,8 +22,8 @@ const Footer = () => {
         <div className="footer-section support">
           <h2>Support</h2>
           <ul>
-            <li><a href="#faqs">FAQs</a></li>
-            <li><a href="#resources">Resources</a></li>
+            <li><Link to="/faq">FAQs</Link></li>
+            <li><Link to="/resources">Resources</Link></li>
             <li><a href="#replacement-parts">Replacement Parts</a></li>
             <li><a href="#gift-cards">Gift Cards</a></li>
             <li><a href="#product-registration">Product Registration</a></li>
@@ -44,8 +45,8 @@ const Footer = () => {
         <div className="footer-section company">
           <h2>Company</h2>
           <ul>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#about">About</a></li>
+            <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/about">About</Link></li>
             <li><a href="#partners">Partners</a></li>
             <li><a href="#affiliate-program">Affiliate Program</a></li>
             <li><a href="#blog">Blog</a></li>

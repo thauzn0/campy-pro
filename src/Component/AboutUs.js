@@ -2,10 +2,14 @@ import React from 'react';
 import './AboutUs.css';
 import aboutImage from '../Assets/robots.jpeg'; // Resmin doğru yolu
 import { FaArrowDown } from 'react-icons/fa'; // İkonu import et
+import { useLocation } from 'react-router-dom';
 
 const AboutUs = () => {
-  const scrollToCoreValues = () => {
-    document.getElementById('core-values-section').scrollIntoView({ behavior: 'smooth' });
+  const location = useLocation();
+
+  const scrollToSection = () => {
+    const sectionId = location.pathname === '/about' ? 'about-us-team-section' : 'core-values-section';
+    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
   }
 
   return (
@@ -28,7 +32,7 @@ const AboutUs = () => {
       <div className="about-image">
         <img src={aboutImage} alt="About Us" />
       </div>
-      <button className="scroll-button" onClick={scrollToCoreValues}>
+      <button className="scroll-button" onClick={scrollToSection}>
         <FaArrowDown />
       </button>
     </section>

@@ -27,6 +27,26 @@ const ProductSection = () => {
 
   return (
     <section className="product-section">
+      <div className="product-images-sidebar">
+        <button className="prev-button" onClick={prevSlide}>&#9650;</button>
+        {images.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt={`Campy Pro v1 Grill ${index + 1}`}
+            className={`sidebar-image ${index === currentIndex ? 'active' : ''}`}
+            onClick={() => goToSlide(index)}
+          />
+        ))}
+        <button className="next-button" onClick={nextSlide}>&#9660;</button>
+      </div>
+      <div className="main-image-container">
+        <div className="main-image-wrapper" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+          {images.map((img, index) => (
+            <img key={index} src={img} alt={`Campy Pro v1 Grill ${index + 1}`} className="main-image" />
+          ))}
+        </div>
+      </div>
       <div className="product-info">
         <h1>Campy Pro v1 Grills</h1>
         <h2>The Ultimate Camping Grill</h2>
@@ -49,26 +69,6 @@ const ProductSection = () => {
             </div>
           )}
         </div>
-      </div>
-      <div className="main-image-container">
-        <div className="main-image-wrapper" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-          {images.map((img, index) => (
-            <img key={index} src={img} alt={`Campy Pro v1 Grill ${index + 1}`} className="main-image" />
-          ))}
-        </div>
-      </div>
-      <div className="product-images-sidebar">
-        <button className="prev-button" onClick={prevSlide}>&#9650;</button>
-        {images.map((img, index) => (
-          <img
-            key={index}
-            src={img}
-            alt={`Campy Pro v1 Grill ${index + 1}`}
-            className={`sidebar-image ${index === currentIndex ? 'active' : ''}`}
-            onClick={() => goToSlide(index)}
-          />
-        ))}
-        <button className="next-button" onClick={nextSlide}>&#9660;</button>
       </div>
     </section>
   );

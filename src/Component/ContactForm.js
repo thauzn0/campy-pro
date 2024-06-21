@@ -1,5 +1,6 @@
 import React from 'react';
 import './ContactForm.css';
+import { Link } from 'react-router-dom';
 
 const ContactForm = () => {
   return (
@@ -28,7 +29,7 @@ const ContactForm = () => {
         <ul>
           <li><a href="#">Return Policy</a></li>
           <li><a href="#">Shipping Policy</a></li>
-          <li><a href="#">FAQ Page</a></li>
+          <li><Link to="/faq">Faq Page</Link></li>
         </ul>
         <h2>Contact</h2>
         <p>Phone: (872) 588-2008</p>

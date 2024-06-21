@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap');
+
+body {
+  font-family: 'League Spartan', sans-serif;
+}
+
+.faq-section {
+  padding: 100px 20px;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.faq-section h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: #333;
+}
+
+.faq-answer {
+  padding: 15px;
+  font-size: 1rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: max-height 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .faq-question {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .faq-answer {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}

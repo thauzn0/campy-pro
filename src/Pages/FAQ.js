@@ -1,12 +1,17 @@
-import React from 'react';
+import FaqComp from '../Component/FaqComp';
+import React, { useEffect } from 'react';
 
 const FAQ = () => {
+  
+  useEffect(() => {
+    window.scrollTo(1, 1); // Sayfanın en üstüne kaydır
+  }, []);
+
   return (
     <div>
-      <h1>Frequently Asked Questions</h1>
-      <p>FAQ details here.</p>
+     <FaqComp></FaqComp>
     </div>
   );
-}
+};
 
 export default FAQ;
