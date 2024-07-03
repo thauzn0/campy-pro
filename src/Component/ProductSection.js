@@ -3,73 +3,121 @@ import './ProductSection.css';
 import productImage1 from '../Assets/1.jpeg'; // Ürün fotoğrafı 1
 import productImage2 from '../Assets/2.jpeg'; // Ürün fotoğrafı 2
 import productImage3 from '../Assets/3.jpeg'; // Ürün fotoğrafı 3
+import productImage4 from '../Assets/4.jpeg'; // Ürün fotoğrafı 4
+import productImage5 from '../Assets/5.jpeg'; // Ürün fotoğrafı 5
+import productImage6 from '../Assets/6.jpeg'; // Ürün fotoğrafı 6
 
 const ProductSection = () => {
-  const images = [productImage1, productImage2, productImage3];
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const products = [
+    {
+      title: 'Campy Pro v1 Grills',
+      subtitle: 'The Ultimate Camping Grill',
+      features: [
+        'High durability and robust design',
+        'Portable and lightweight',
+        'Easy to clean',
+        'Multi-fuel compatibility'
+      ],
+      images: [productImage1, productImage2, productImage3]
+    },
+    {
+      title: 'Campy Pro v2 Grills',
+      subtitle: 'Advanced Camping Grill',
+      features: [
+        'Enhanced durability',
+        'More portable and lightweight',
+        'Easier to clean',
+        'Advanced multi-fuel compatibility'
+      ],
+      images: [productImage4, productImage5, productImage6]
+    }
+  ];
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  const [currentIndices, setCurrentIndices] = useState([0, 0]);
+  const [dropdownOpen, setDropdownOpen] = useState([false, false]);
+
+  const nextSlide = (productIndex) => {
+    setCurrentIndices((prevIndices) => {
+      const newIndices = [...prevIndices];
+      newIndices[productIndex] = (newIndices[productIndex] + 1) % products[productIndex].images.length;
+      return newIndices;
+    });
   };
 
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  const prevSlide = (productIndex) => {
+    setCurrentIndices((prevIndices) => {
+      const newIndices = [...prevIndices];
+      newIndices[productIndex] = (newIndices[productIndex] - 1 + products[productIndex].images.length) % products[productIndex].images.length;
+      return newIndices;
+    });
   };
 
-  const goToSlide = (index) => {
-    setCurrentIndex(index);
+  const goToSlide = (productIndex, slideIndex) => {
+    setCurrentIndices((prevIndices) => {
+      const newIndices = [...prevIndices];
+      newIndices[productIndex] = slideIndex;
+      return newIndices;
+    });
   };
 
-  const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
+  const toggleDropdown = (productIndex) => {
+    setDropdownOpen((prevOpen) => {
+      const newOpen = [...prevOpen];
+      newOpen[productIndex] = !newOpen[productIndex];
+      return newOpen;
+    });
   };
 
   return (
     <section className="product-section">
-      <div className="product-images-sidebar">
-        <button className="prev-button" onClick={prevSlide}>&#9650;</button>
-        {images.map((img, index) => (
-          <img
-            key={index}
-            src={img}
-            alt={`Campy Pro v1 Grill ${index + 1}`}
-            className={`sidebar-image ${index === currentIndex ? 'active' : ''}`}
-            onClick={() => goToSlide(index)}
-          />
-        ))}
-        <button className="next-button" onClick={nextSlide}>&#9660;</button>
-      </div>
-      <div className="main-image-container">
-        <div className="main-image-wrapper" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-          {images.map((img, index) => (
-            <img key={index} src={img} alt={`Campy Pro v1 Grill ${index + 1}`} className="main-image" />
-          ))}
-        </div>
-      </div>
-      <div className="product-info">
-        <h1>Campy Pro v1 Grills</h1>
-        <h2>The Ultimate Camping Grill</h2>
-        <p>Experience unmatched grilling performance with Campy Pro v1 Grills, designed for outdoor enthusiasts. Enjoy features like:</p>
-        <ul>
-          <li>High durability and robust design</li>
-          <li>Portable and lightweight</li>
-          <li>Easy to clean</li>
-          <li>Multi-fuel compatibility</li>
-        </ul>
-        <div className="platforms">
-          <button className="platform-button" onClick={toggleDropdown}>
-            Available Platforms
-          </button>
-          {dropdownOpen && (
-            <div className="dropdown-menu">
-              <button onClick={() => window.open('https://www.amazon.com', '_blank')}>Amazon</button>
-              <button onClick={() => window.open('https://www.ebay.com', '_blank')}>eBay</button>
-              <button onClick={() => window.open('https://www.walmart.com', '_blank')}>Walmart</button>
+      {products.map((product, productIndex) => (
+        <div key={productIndex} className="product">
+          <div className="product-media">
+            <div className="main-image-container">
+              <div className="main-image-wrapper" style={{ transform: `translateX(-${currentIndices[productIndex] * 100}%)` }}>
+                {product.images.map((img, index) => (
+                  <img key={index} src={img} alt={`Campy Pro v${productIndex + 1} Grill ${index + 1}`} className="main-image" />
+                ))}
+              </div>
             </div>
-          )}
+            <div className="product-images-slider">
+              <button className="prev-button" onClick={() => prevSlide(productIndex)}>&#9664;</button>
+              {product.images.map((img, index) => (
+                <img
+                  key={index}
+                  src={img}
+                  alt={`Campy Pro v${productIndex + 1} Grill ${index + 1}`}
+                  className={`slider-image ${index === currentIndices[productIndex] ? 'active' : ''}`}
+                  onClick={() => goToSlide(productIndex, index)}
+                />
+              ))}
+              <button className="next-button" onClick={() => nextSlide(productIndex)}>&#9654;</button>
+            </div>
+          </div>
+          <div className="product-info">
+            <h1>{product.title}</h1>
+            <h2>{product.subtitle}</h2>
+            <p>Experience unmatched grilling performance with {product.title}, designed for outdoor enthusiasts. Enjoy features like:</p>
+            <ul>
+              {product.features.map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
+            </ul>
+            <div className="platforms">
+              <button className="platform-button" onClick={() => toggleDropdown(productIndex)}>
+                Available Platforms
+              </button>
+              {dropdownOpen[productIndex] && (
+                <div className="dropdown-menu">
+                  <button onClick={() => window.open('https://www.amazon.com', '_blank')}>Amazon</button>
+                  <button onClick={() => window.open('https://www.ebay.com', '_blank')}>eBay</button>
+                  <button onClick={() => window.open('https://www.walmart.com', '_blank')}>Walmart</button>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
-      </div>
+      ))}
     </section>
   );
 }

@@ -24,22 +24,15 @@ const Footer = () => {
           <ul>
             <li><Link to="/faq">FAQs</Link></li>
             <li><Link to="/resources">Resources</Link></li>
-            <li><a href="#replacement-parts">Replacement Parts</a></li>
-            <li><a href="#gift-cards">Gift Cards</a></li>
-            <li><a href="#product-registration">Product Registration</a></li>
-            <li><a href="#military-discount">Military Discount</a></li>
+  
           </ul>
         </div>
         <div className="footer-section policies">
           <h2>Policies</h2>
           <ul>
-            <li><a href="#shipping-policy">Shipping Policy</a></li>
-            <li><a href="#return-policy">Return Policy</a></li>
-            <li><a href="#privacy-policy">Privacy Policy</a></li>
-            <li><a href="#terms-conditions">Terms & Conditions</a></li>
-            <li><a href="#orders-payment">Orders and Payment</a></li>
-            <li><a href="#product-warranty">Product Warranty</a></li>
-            <li><a href="#wholesale-policies">Wholesale Policies and Programs</a></li>
+            <li><Link to="/privacy">Privacy</Link></li>
+            <li><Link to="/terms">Terms & Conditions</Link></li>
+            <li><Link to="/product-warranty">Product Warranty</Link></li>
           </ul>
         </div>
         <div className="footer-section company">
@@ -47,9 +40,7 @@ const Footer = () => {
           <ul>
             <li><Link to="/contact">Contact</Link></li>
             <li><Link to="/about">About</Link></li>
-            <li><a href="#partners">Partners</a></li>
-            <li><a href="#affiliate-program">Affiliate Program</a></li>
-            <li><a href="#blog">Blog</a></li>
+      
           </ul>
         </div>
         <div className="footer-section get-in-touch">

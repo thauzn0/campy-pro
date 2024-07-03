@@ -35,7 +35,7 @@ const Header = () => {
   };
 
   let headerClasses = ['header'];
-  if (scrolled || location.pathname === '/contact') {
+  if (scrolled || location.pathname !== '/') {
     headerClasses.push('scrolled');
   }
 

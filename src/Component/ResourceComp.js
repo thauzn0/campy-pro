@@ -1,20 +1,18 @@
 import React from 'react';
 import './ResourceComp.css';
-
+import { Link } from 'react-router-dom';
 const ResourcesComp = () => {
   return (
     <section className="resources-section">
       <div className="sidebar">
         <ul className="sidebar-list">
-          <li><a href="#faqs">FAQs</a></li>
-          <li><a href="#resources">Resources</a></li>
-          <li><a href="#replacement-parts">Replacement Parts</a></li>
-          <li><a href="#shipping-policy">Shipping Policy</a></li>
-          <li><a href="#return-policy">Return Policy</a></li>
-          <li><a href="#privacy-policy">Privacy Policy</a></li>
-          <li><a href="#terms-conditions">Terms & Conditions</a></li>
-          <li><a href="#orders-payment">Orders and Payment</a></li>
-          <li><a href="#product-warranty">Product Warranty</a></li>
+        <li><Link to="/faq">FAQs</Link></li>
+        <li><Link to="/resources">Resources</Link></li>
+         
+        <li><Link to="/privacy">Privacy Policy</Link></li>
+          <li><Link to="/terms">Terms & Conditions</Link></li>
+      
+          <li><Link to="/product-warranty">Product Warranty</Link></li>
         </ul>
         <div className="contact-box">
           <h3>Need help?</h3>
@@ -27,7 +25,7 @@ const ResourcesComp = () => {
         <div className="resources-content">
           <h2>Catalog</h2>
           <ul>
-            <li><a href="#catalog">2023 Magma Products Marine and Outdoor Catalog</a></li>
+            <li><a href="#catalog">2024 Campy Pro Products Grill Catalog</a></li>
           </ul>
           <h2>Product Features Comparison Charts</h2>
           <ul>
@@ -38,13 +36,7 @@ const ResourcesComp = () => {
           <ul>
             <li><a href="#video1">VIDEO: How to Identify Your Rectangle Grill Model</a></li>
             <li><a href="#video2">VIDEO: How to Connect the Regulator to Your Rectangular Grill</a></li>
-            <li><a href="#video3">VIDEO: Troubleshooting Igniter Issues with Your Rectangular Grill</a></li>
-            <li><a href="#video4">VIDEO: How to Replace the Igniter on Your Rectangular Grill</a></li>
-            <li><a href="#video5">VIDEO: Troubleshooting Low Flame or Inconsistent Heat</a></li>
-            <li><a href="#video6">VIDEO: How to Install Single Mounts for Your Rectangular Grill</a></li>
-            <li><a href="#video7">VIDEO: How to Install Dual Mounts for Your Rectangular Grill</a></li>
-            <li><a href="#video8">VIDEO: Unboxing Your Marine Kettle Gas Grill</a></li>
-            <li><a href="#video9">VIDEO: Unboxing Your Marine Kettle 3 Combination Gas Grill</a></li>
+  
         
           </ul>
         </div>

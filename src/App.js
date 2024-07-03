@@ -8,6 +8,9 @@ import FAQ from './Pages/FAQ';
 import About from './Pages/About';
 import Products from './Pages/Products';
 import Resources from './Pages/Resources';
+import PrivacyPolicy from './Pages/PrivacyPolicy';
+import TermsAndConditions from './Pages/TermsAndConditions';
+import ProductWarranty from './Pages/ProductWarranty';
 function App() {
   return (
     <Router>
@@ -20,6 +23,10 @@ function App() {
           <Route path="/about" element={<About/>}/>
           <Route path="/products" element={<Products/>}/>
           <Route path="/resources" element={<Resources/>}/>
+          <Route path='/privacy' element={<PrivacyPolicy/>}/>
+          <Route path='/terms' element={<TermsAndConditions/>}/>
+          <Route path='/product-warranty' element={<ProductWarranty/>}/>
+
         </Routes>
         <Footer />
       </div>

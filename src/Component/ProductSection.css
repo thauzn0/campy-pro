@@ -6,53 +6,24 @@ body {
 }
 
 .product-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 200px 20px;
   background-color: #f5f5f5;
   color: #333;
 }
 
-.product-images-sidebar {
+.product {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 60px; /* Ürünler arasında boşluk */
+}
+
+.product-media {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.product-images-sidebar .prev-button,
-.product-images-sidebar .next-button {
-  background-color: #000000; /* Buton rengi */
-  color: #fff; /* Ok rengi */
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-  transition: background-color 0.3s ease;
-}
-
-.product-images-sidebar .prev-button:hover,
-.product-images-sidebar .next-button:hover {
-  background-color: #000000;
-}
-
-.product-images-sidebar .sidebar-image {
-  width: 120px; /* Genişlik küçültüldü */
-  height: auto;
-  margin-bottom: 10px;
-  margin-right: 10px;
-  margin-left: 10px;
-  cursor: pointer;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-  border-radius: 20px;
-}
-
-.product-images-sidebar .sidebar-image.active,
-.product-images-sidebar .sidebar-image:hover {
-  opacity: 1;
+  flex: 1;
+  margin-right: 20px; /* Ürün özelliklerinden uzaklaştırma */
 }
 
 .product-info {
@@ -89,26 +60,60 @@ body {
 }
 
 .main-image-container {
-  flex: 1;
   text-align: center;
-  overflow: hidden; /* Taşan kısmı gizle */
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 10px; /* Slider ile fotoğraf arasına boşluk */
 }
 
 .main-image-wrapper {
   display: flex;
-  transition: transform 0.5s ease-in-out; /* Geçiş efekti */
+  transition: transform 0.5s ease-in-out;
 }
 
 .main-image-wrapper img {
-  min-width: 100%; /* Her bir görüntü tam genişlikte olmalı */
+  min-width: 100%;
+  border-radius: 20px;
 }
 
-.main-image-container .main-image {
-  width: 80%; /* Genişlik küçültüldü */
+.product-images-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-images-slider .prev-button,
+.product-images-slider .next-button {
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  margin: 0 10px;
+  transition: background-color 0.3s ease;
+}
+
+.product-images-slider .prev-button:hover,
+.product-images-slider .next-button:hover {
+  background-color: #333;
+}
+
+.slider-image {
+  width: 120px;
   height: auto;
-  max-height: 500px; /* Yükseklik küçültüldü */
+  margin: 0 5px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
   border-radius: 20px;
-  object-fit: cover;
+}
+
+.slider-image.active,
+.slider-image:hover {
+  opacity: 1;
 }
 
 .platforms {
@@ -120,7 +125,7 @@ body {
   padding: 10px 20px;
   font-size: 1rem;
   color: #fff;
-  background-color: #000000; /* Siyah renk */
+  background-color: #000000;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -135,10 +140,10 @@ body {
   display: flex;
   justify-content: center;
   position: absolute;
-  top: 50px; /* Platform butonunun hemen altında */
+  top: 50px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 10; /* Üstte görünmesi için */
+  z-index: 10;
 }
 
 .dropdown-menu button {
@@ -157,10 +162,10 @@ body {
   background-color: #333;
 }
 
+
 @media (max-width: 768px) {
-  .product-section {
+  .product {
     flex-direction: column;
-    text-align: center;
   }
 
   .product-info {
