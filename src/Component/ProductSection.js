@@ -9,7 +9,7 @@ import productImage6 from '../Assets/v2_p1.jpeg'; // Ürün fotoğrafı 6
 import productImage7 from '../Assets/v1-kapak.jpeg';
 import productImage8 from '../Assets/v2_p4.jpeg';
 import productImage9 from '../Assets/son_v2.png';
-
+import productImage10 from '../Assets/4.jpeg';
 const ProductSection = () => {
   const products = [
     {
@@ -32,7 +32,7 @@ const ProductSection = () => {
         'Easier to clean',
         'Advanced multi-fuel compatibility'
       ],
-      images: [productImage5, productImage6, productImage8,productImage9 ,productImage4]
+      images: [productImage5, productImage6, productImage8,productImage9 ,productImage10, productImage4]
     }
   ];
 
