@@ -3,9 +3,12 @@ import './ProductSection.css';
 import productImage1 from '../Assets/1.jpeg'; // Ürün fotoğrafı 1
 import productImage2 from '../Assets/2.jpeg'; // Ürün fotoğrafı 2
 import productImage3 from '../Assets/3.jpeg'; // Ürün fotoğrafı 3
-import productImage4 from '../Assets/4.jpeg'; // Ürün fotoğrafı 4
-import productImage5 from '../Assets/5.jpeg'; // Ürün fotoğrafı 5
-import productImage6 from '../Assets/6.jpeg'; // Ürün fotoğrafı 6
+import productImage4 from '../Assets/v2_p3.jpeg'; // Ürün fotoğrafı 4
+import productImage5 from '../Assets/v2_p2.jpeg'; // Ürün fotoğrafı 5
+import productImage6 from '../Assets/v2_p1.jpeg'; // Ürün fotoğrafı 6
+import productImage7 from '../Assets/v1-kapak.jpeg';
+import productImage8 from '../Assets/v2_p4.jpeg';
+import productImage9 from '../Assets/son_v2.png';
 
 const ProductSection = () => {
   const products = [
@@ -18,7 +21,7 @@ const ProductSection = () => {
         'Easy to clean',
         'Multi-fuel compatibility'
       ],
-      images: [productImage1, productImage2, productImage3]
+      images: [productImage7,productImage1, productImage2, productImage3]
     },
     {
       title: 'Campy Pro v2 Grills',
@@ -29,7 +32,7 @@ const ProductSection = () => {
         'Easier to clean',
         'Advanced multi-fuel compatibility'
       ],
-      images: [productImage4, productImage5, productImage6]
+      images: [productImage5, productImage6, productImage8,productImage9 ,productImage4]
     }
   ];
 

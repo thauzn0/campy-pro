@@ -1,6 +1,6 @@
 import React from 'react';
 import './AboutUs.css';
-import aboutImage from '../Assets/about.jpeg'; // Resmin doğru yolu
+import aboutImage from '../Assets/about_us.jpeg'; // Resmin doğru yolu
 import { FaArrowDown } from 'react-icons/fa'; // İkonu import et
 import { useLocation } from 'react-router-dom';
 
