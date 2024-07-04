@@ -6,7 +6,7 @@ body {
 }
 
 .product-section {
-  padding: 200px 20px;
+  padding: 50px 20px; /* Padding'i biraz azaltarak mobilde daha iyi görünmesini sağla */
   background-color: #f5f5f5;
   color: #333;
 }
@@ -33,17 +33,17 @@ body {
 }
 
 .product-info h1 {
-  font-size: 3rem;
+  font-size: 2rem; /* Font boyutunu küçült */
   margin-bottom: 20px;
 }
 
 .product-info h2 {
-  font-size: 2rem;
+  font-size: 1.5rem; /* Font boyutunu küçült */
   margin-bottom: 20px;
 }
 
 .product-info p {
-  font-size: 1.2rem;
+  font-size: 1rem; /* Font boyutunu küçült */
   margin-bottom: 20px;
 }
 
@@ -53,7 +53,7 @@ body {
 }
 
 .product-info ul li {
-  font-size: 1.2rem;
+  font-size: 1rem; /* Font boyutunu küçült */
   margin-bottom: 10px;
   position: relative;
   padding-left: 20px;
@@ -81,6 +81,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap; /* Öğeleri sarma */
+  width: 100%; /* Slider genişliği */
 }
 
 .product-images-slider .prev-button,
@@ -101,21 +103,14 @@ body {
   background-color: #333;
 }
 
-.slider-images-container {
-  display: flex;
-  overflow: hidden;
-  width: 360px; /* 3 görüntü genişliğinde */
-}
-
 .slider-image {
-  width: 120px;
-  height: 80px;
-  object-fit: cover;
+  width: 100px; /* Görüntü boyutunu küçült */
+  height: auto;
   margin: 0 5px;
   cursor: pointer;
   opacity: 0.6;
   transition: opacity 0.3s ease;
-  border-radius: 10px;
+  border-radius: 10px; /* Kenarları yuvarlat */
 }
 
 .slider-image.active,
@@ -145,7 +140,7 @@ body {
 
 .dropdown-menu {
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Dikeye dönüştür */
   position: absolute;
   top: 50px;
   left: 50%;
@@ -162,7 +157,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin: 0 5px;
+  margin: 5px 0; /* Butonlar arasında boşluk */
 }
 
 .dropdown-menu button:hover {
@@ -172,6 +167,7 @@ body {
 @media (max-width: 768px) {
   .product {
     flex-direction: column;
+    align-items: center; /* Ortala */
   }
 
   .product-info {
@@ -179,14 +175,31 @@ body {
     margin-bottom: 40px;
   }
 
-  .main-image-container .main-image {
-    max-height: 200px;
+  .main-image-container {
+    width: 100%;
+    max-width: none;
+  }
+
+  .main-image-wrapper img {
+    max-height: 300px; /* Görüntü yüksekliğini sınırlı tut */
+  }
+
+  .product-images-slider .prev-button,
+  .product-images-slider .next-button {
+    font-size: 1rem; /* Buton boyutunu küçült */
+    padding: 5px; /* Buton padding'ini küçült */
+    margin: 0 5px;
+  }
+
+  .slider-image {
+    width: 80px; /* Görüntü boyutunu küçült */
   }
 
   .dropdown-menu {
-    flex-direction: column;
     top: 40px;
     transform: translateX(0);
+    width: 100%;
+    left: 0;
   }
 
   .dropdown-menu button {
