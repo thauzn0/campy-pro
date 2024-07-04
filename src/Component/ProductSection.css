@@ -74,7 +74,6 @@ body {
 
 .main-image-wrapper img {
   min-width: 100%;
-  max-width: 33.33%;
   border-radius: 20px;
 }
 
@@ -102,14 +101,21 @@ body {
   background-color: #333;
 }
 
+.slider-images-container {
+  display: flex;
+  overflow: hidden;
+  width: 360px; /* 3 görüntü genişliğinde */
+}
+
 .slider-image {
   width: 120px;
-  height: auto;
+  height: 80px;
+  object-fit: cover;
   margin: 0 5px;
   cursor: pointer;
   opacity: 0.6;
   transition: opacity 0.3s ease;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .slider-image.active,

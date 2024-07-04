@@ -72,13 +72,25 @@ const ProductSection = () => {
     });
   };
 
+  const renderSliderImages = (productIndex) => {
+    const startIndex = currentIndices[productIndex];
+    const endIndex = startIndex + 3;
+    const imagesToShow = products[productIndex].images.slice(startIndex, endIndex);
+
+    if (imagesToShow.length < 3) {
+      imagesToShow.push(...products[productIndex].images.slice(0, 3 - imagesToShow.length));
+    }
+
+    return imagesToShow;
+  };
+
   return (
     <section className="product-section">
       {products.map((product, productIndex) => (
         <div key={productIndex} className="product">
           <div className="product-media">
             <div className="main-image-container">
-              <div className="main-image-wrapper" style={{ transform: `translateX(-${currentIndices[productIndex] * 33.33}%)` }}>
+              <div className="main-image-wrapper" style={{ transform: `translateX(-${currentIndices[productIndex] * 100}%)` }}>
                 {product.images.map((img, index) => (
                   <img key={index} src={img} alt={`Campy Pro v${productIndex + 1} Grill ${index + 1}`} className="main-image" />
                 ))}
@@ -86,15 +98,17 @@ const ProductSection = () => {
             </div>
             <div className="product-images-slider">
               <button className="prev-button" onClick={() => prevSlide(productIndex)}>&#9664;</button>
-              {product.images.map((img, index) => (
-                <img
-                  key={index}
-                  src={img}
-                  alt={`Campy Pro v${productIndex + 1} Grill ${index + 1}`}
-                  className={`slider-image ${index === currentIndices[productIndex] ? 'active' : ''}`}
-                  onClick={() => goToSlide(productIndex, index)}
-                />
-              ))}
+              <div className="slider-images-container">
+                {renderSliderImages(productIndex).map((img, index) => (
+                  <img
+                    key={index}
+                    src={img}
+                    alt={`Campy Pro v${productIndex + 1} Grill ${index + 1}`}
+                    className={`slider-image ${index === currentIndices[productIndex] ? 'active' : ''}`}
+                    onClick={() => goToSlide(productIndex, (currentIndices[productIndex] + index) % products[productIndex].images.length)}
+                  />
+                ))}
+              </div>
               <button className="next-button" onClick={() => nextSlide(productIndex)}>&#9654;</button>
             </div>
           </div>
@@ -124,6 +138,6 @@ const ProductSection = () => {
       ))}
     </section>
   );
-};
+}
 
 export default ProductSection;
