@@ -11,6 +11,8 @@ import Resources from './Pages/Resources';
 import PrivacyPolicy from './Pages/PrivacyPolicy';
 import TermsAndConditions from './Pages/TermsAndConditions';
 import ProductWarranty from './Pages/ProductWarranty';
+import CampyProV1 from './Pages/CampyProV1';
+import CampyProV2 from './Pages/CampyProV2';
 function App() {
   return (
     <Router>
@@ -26,6 +28,8 @@ function App() {
           <Route path='/privacy' element={<PrivacyPolicy/>}/>
           <Route path='/terms' element={<TermsAndConditions/>}/>
           <Route path='/product-warranty' element={<ProductWarranty/>}/>
+          <Route path='/campy-pro-v1' element={<CampyProV1/>}/>
+          <Route path='/campy-pro-v2' element={<CampyProV2/>}/>
 
         </Routes>
         <Footer />

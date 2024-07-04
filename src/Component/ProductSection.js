@@ -38,10 +38,16 @@ const ProductSection = () => {
   ];
 
   const [currentIndices, setCurrentIndices] = useState([0, 0]);
-  const [dropdownOpen, setDropdownOpen] = useState([false, false]);
+  const [sliderIndices, setSliderIndices] = useState([0, 0]);
 
   const nextSlide = (productIndex) => {
     setCurrentIndices((prevIndices) => {
+      const newIndices = [...prevIndices];
+      newIndices[productIndex] = (newIndices[productIndex] + 1) % products[productIndex].images.length;
+      return newIndices;
+    });
+
+    setSliderIndices((prevIndices) => {
       const newIndices = [...prevIndices];
       newIndices[productIndex] = (newIndices[productIndex] + 1) % products[productIndex].images.length;
       return newIndices;
@@ -54,6 +60,12 @@ const ProductSection = () => {
       newIndices[productIndex] = (newIndices[productIndex] - 1 + products[productIndex].images.length) % products[productIndex].images.length;
       return newIndices;
     });
+
+    setSliderIndices((prevIndices) => {
+      const newIndices = [...prevIndices];
+      newIndices[productIndex] = (newIndices[productIndex] - 1 + products[productIndex].images.length) % products[productIndex].images.length;
+      return newIndices;
+    });
   };
 
   const goToSlide = (productIndex, slideIndex) => {
@@ -62,26 +74,11 @@ const ProductSection = () => {
       newIndices[productIndex] = slideIndex;
       return newIndices;
     });
-  };
-
-  const toggleDropdown = (productIndex) => {
-    setDropdownOpen((prevOpen) => {
-      const newOpen = [...prevOpen];
-      newOpen[productIndex] = !newOpen[productIndex];
-      return newOpen;
+    setSliderIndices((prevIndices) => {
+      const newIndices = [...prevIndices];
+      newIndices[productIndex] = slideIndex;
+      return newIndices;
     });
-  };
-
-  const renderSliderImages = (productIndex) => {
-    const startIndex = currentIndices[productIndex];
-    const endIndex = startIndex + 3;
-    const imagesToShow = products[productIndex].images.slice(startIndex, endIndex);
-
-    if (imagesToShow.length < 3) {
-      imagesToShow.push(...products[productIndex].images.slice(0, 3 - imagesToShow.length));
-    }
-
-    return imagesToShow;
   };
 
   return (
@@ -98,14 +95,14 @@ const ProductSection = () => {
             </div>
             <div className="product-images-slider">
               <button className="prev-button" onClick={() => prevSlide(productIndex)}>&#9664;</button>
-              <div className="slider-images-container">
-                {renderSliderImages(productIndex).map((img, index) => (
+              <div className="slider-wrapper">
+                {product.images.slice(sliderIndices[productIndex], sliderIndices[productIndex] + 3).map((img, index) => (
                   <img
                     key={index}
                     src={img}
                     alt={`Campy Pro v${productIndex + 1} Grill ${index + 1}`}
                     className={`slider-image ${index === currentIndices[productIndex] ? 'active' : ''}`}
-                    onClick={() => goToSlide(productIndex, (currentIndices[productIndex] + index) % products[productIndex].images.length)}
+                    onClick={() => goToSlide(productIndex, sliderIndices[productIndex] + index)}
                   />
                 ))}
               </div>
@@ -122,16 +119,9 @@ const ProductSection = () => {
               ))}
             </ul>
             <div className="platforms">
-              <button className="platform-button" onClick={() => toggleDropdown(productIndex)}>
-                Available Platforms
-              </button>
-              {dropdownOpen[productIndex] && (
-                <div className="dropdown-menu">
-                  <button onClick={() => window.open('https://www.amazon.com', '_blank')}>Amazon</button>
-                  <button onClick={() => window.open('https://www.ebay.com', '_blank')}>eBay</button>
-                  <button onClick={() => window.open('https://www.walmart.com', '_blank')}>Walmart</button>
-                </div>
-              )}
+              <button onClick={() => window.open('https://www.amazon.com', '_blank')} className="platform-button">Amazon</button>
+              <button onClick={() => window.open('https://www.ebay.com', '_blank')} className="platform-button">eBay</button>
+              <button onClick={() => window.open('https://www.walmart.com', '_blank')} className="platform-button">Walmart</button>
             </div>
           </div>
         </div>
