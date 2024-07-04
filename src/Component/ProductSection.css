@@ -74,6 +74,7 @@ body {
 
 .main-image-wrapper img {
   min-width: 100%;
+  max-width: 33.33%;
   border-radius: 20px;
 }
 
@@ -161,7 +162,6 @@ body {
 .dropdown-menu button:hover {
   background-color: #333;
 }
-
 
 @media (max-width: 768px) {
   .product {

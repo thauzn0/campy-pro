@@ -7,7 +7,7 @@ body {
 
 .header {
   display: flex;
-  justify-content: center; /* Liste elemanlarını ortala */
+  justify-content: center;
   align-items: center;
   padding: 20px 40px;
   background-color: rgba(0, 0, 0, 0); /* Tamamen transparan */
@@ -28,6 +28,13 @@ body {
 .header-nav {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
 }
 
 .nav-links {
@@ -53,9 +60,30 @@ body {
 @media (max-width: 768px) {
   .nav-links {
     display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.mobile-menu-open {
+    display: flex;
   }
   
   .menu-icon {
     display: block;
+  }
+
+  .header {
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .header.scrolled {
+    background-color: #fff;
   }
 }

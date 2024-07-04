@@ -10,6 +10,7 @@ import productImage7 from '../Assets/v1-kapak.jpeg';
 import productImage8 from '../Assets/v2_p4.jpeg';
 import productImage9 from '../Assets/son_v2.png';
 import productImage10 from '../Assets/4.jpeg';
+
 const ProductSection = () => {
   const products = [
     {
@@ -21,7 +22,7 @@ const ProductSection = () => {
         'Easy to clean',
         'Multi-fuel compatibility'
       ],
-      images: [productImage7,productImage1, productImage2, productImage3]
+      images: [productImage7, productImage1, productImage2, productImage3]
     },
     {
       title: 'Campy Pro v2 Grills',
@@ -32,7 +33,7 @@ const ProductSection = () => {
         'Easier to clean',
         'Advanced multi-fuel compatibility'
       ],
-      images: [productImage5, productImage6, productImage8,productImage9 ,productImage10, productImage4]
+      images: [productImage5, productImage6, productImage8, productImage9, productImage10, productImage4]
     }
   ];
 
@@ -77,7 +78,7 @@ const ProductSection = () => {
         <div key={productIndex} className="product">
           <div className="product-media">
             <div className="main-image-container">
-              <div className="main-image-wrapper" style={{ transform: `translateX(-${currentIndices[productIndex] * 100}%)` }}>
+              <div className="main-image-wrapper" style={{ transform: `translateX(-${currentIndices[productIndex] * 33.33}%)` }}>
                 {product.images.map((img, index) => (
                   <img key={index} src={img} alt={`Campy Pro v${productIndex + 1} Grill ${index + 1}`} className="main-image" />
                 ))}
@@ -123,6 +124,6 @@ const ProductSection = () => {
       ))}
     </section>
   );
-}
+};
 
 export default ProductSection;

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link as RouterLink, useNavigate, useLocation } from 'react-router-dom';
-import { Link } from 'react-scroll';
 import './Header.css';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -35,14 +35,21 @@ const Header = () => {
   };
 
   let headerClasses = ['header'];
-  if (scrolled || location.pathname !== '/') {
+  if (scrolled || location.pathname === '/contact') {
     headerClasses.push('scrolled');
   }
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   return (
     <header className={headerClasses.join(' ')}>
       <nav className="header-nav">
-        <ul className="nav-links">
+        <div className="menu-icon" onClick={toggleMobileMenu}>
+          ☰
+        </div>
+        <ul className={`nav-links ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
           <li>
             <span 
               onClick={() => handleNavigation('hero')}
