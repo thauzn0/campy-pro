@@ -46,9 +46,8 @@ const Footer = () => {
         <div className="footer-section get-in-touch">
           <h2>Get in Touch</h2>
           <ul>
-            <li><a href="tel:+18725882008">+1 (872) 588-2008</a></li>
             <li><a href="mailto:info@campypro.com">info@campypro.com</a></li>
-            <li><a href="https://goo.gl/maps/4v2HkJ75fQz"> IL, Chicago  90712 United States of America</a></li>
+            <li><a href="https://goo.gl/maps/4v2HkJ75fQz"> Chicago IL 60611 USA</a></li>
           </ul>
         </div>
       </div>

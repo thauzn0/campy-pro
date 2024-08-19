@@ -83,8 +83,8 @@ const Header = () => {
           <li className={`dropdown ${isMobileMenuOpen ? 'mobile-dropdown' : ''}`}>
             <span style={{ cursor: 'pointer' }} onClick={handleProductsClick}>Products</span>
             <div className="dropdown-content">
-              <RouterLink to="/campy-pro-v1">Campy Pro v1</RouterLink>
-              <RouterLink to="/campy-pro-v2">Campy Pro v2</RouterLink>
+              <RouterLink to="/campy-pro-v1">Campy Pro AR-1</RouterLink>
+              <RouterLink to="/campy-pro-v2">Campy Pro AR-2</RouterLink>
             </div>
           </li>
           <li>

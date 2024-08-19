@@ -30,7 +30,6 @@ const ResourcesComp = () => {
           <h2>Product Features Comparison Charts</h2>
           <ul>
             <li><a href="#marine-grills">All Marine Grills</a></li>
-            <li><a href="#kettle-grills">All Kettle Grills</a></li>
           </ul>
           <h2>Video Guides</h2>
           <ul>

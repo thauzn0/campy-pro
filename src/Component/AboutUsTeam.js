@@ -10,14 +10,10 @@ const AboutUsTeam = () => {
       <div className="team-members">
         <div className="team-member">
           <img src={teamMember1} alt="Team Member 1" className="team-member-photo" />
-          <h3>John Doe</h3>
-          <p>CEO</p>
+          <h3>Ferit Uzun</h3>
+          <p>Founder & CEO</p>
         </div>
-        <div className="team-member">
-          <img src={teamMember2} alt="Team Member 2" className="team-member-photo" />
-          <h3>Jane Smith</h3>
-          <p>CTO</p>
-        </div>
+        
         {/* Add more team members as needed */}
       </div>
     </section>

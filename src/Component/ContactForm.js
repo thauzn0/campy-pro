@@ -32,9 +32,8 @@ const ContactForm = () => {
           <li><Link to="/faq">Faq Page</Link></li>
         </ul>
         <h2>Contact</h2>
-        <p>Phone: (872) 588-2008</p>
         <p>Email: info@campypro.com</p>
-        <p>Address: IL, Chicago 90712 United States of America</p>
+        <p>Address: Chicago IL 60611 USA</p>
       </div>
     </div>
   );

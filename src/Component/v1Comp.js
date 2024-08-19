@@ -44,9 +44,9 @@ const V1Comp = () => {
             </div>
           </div>
           <div className="product-info">
-            <h1>Campy Pro v1 Grills</h1>
+            <h1>Campy Pro AR-1 Grills</h1>
             <h2>The Ultimate Camping Grill</h2>
-            <p>Experience unmatched grilling performance with Campy Pro v1 Grills, designed for outdoor enthusiasts. Enjoy features like:</p>
+            <p>Experience unmatched grilling performance with Campy Pro AR-1 Grills, designed for outdoor enthusiasts. Enjoy features like:</p>
             <ul>
               <li>High durability and robust design</li>
               <li>Portable and lightweight</li>
@@ -59,9 +59,9 @@ const V1Comp = () => {
               <li>Warranty: 2 years</li>
             </ul>
             <div className="platforms">
-              <button onClick={() => window.open('https://www.amazon.com', '_blank')} className="platform-button">Amazon</button>
-              <button onClick={() => window.open('https://www.ebay.com', '_blank')} className="platform-button">eBay</button>
-              <button onClick={() => window.open('https://www.walmart.com', '_blank')} className="platform-button">Walmart</button>
+              <button onClick={() => window.open('https://www.amazon.com/Campy-Pro-Portable-Automatic-Ignition/dp/B0D8TS7FZP/ref=sr_1_2?dib=eyJ2IjoiMSJ9.opu-0ynneuP2i1uQm7-BXqo6_NJeNSFOZG4vEbFkQ8xdwvekGEy7Tgqc_UJQ2B-M.IBgbf99wWev73saHXqEugEVBOC4x3YNWgmW8gxdcdB4&dib_tag=se&m=A1CM5OURBNP9R9&marketplaceID=ATVPDKIKX0DER&qid=1724081071&s=merchant-items&sr=1-2', '_blank')} className="platform-button">Amazon</button>
+              {/* <button onClick={() => window.open('https://www.ebay.com', '_blank')} className="platform-button">eBay</button>
+              <button onClick={() => window.open('https://www.walmart.com', '_blank')} className="platform-button">Walmart</button> */}
             </div>
           </div>
         </div>

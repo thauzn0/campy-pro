@@ -17,14 +17,7 @@ const FaqComp = () => {
       question: 'What payment methods do you accept?',
       answer: 'We accept various payment methods including credit/debit cards, PayPal, and bank transfers.'
     },
-    {
-        question: 'Temp',
-        answer: 'We accept various payment methods including credit/debit cards, PayPal, and bank transfers.'
-      },
-      {
-        question: 'Temp2',
-        answer: 'We accept various payment methods including credit/debit cards, PayPal, and bank transfers.'
-      },
+    
     // Add more questions as needed
   ];
 

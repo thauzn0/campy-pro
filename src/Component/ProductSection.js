@@ -14,7 +14,7 @@ import productImage10 from '../Assets/4.jpeg';
 const ProductSection = () => {
   const products = [
     {
-      title: 'Campy Pro v1 Grills',
+      title: 'Campy Pro AR-1 Grills',
       subtitle: 'The Ultimate Camping Grill',
       features: [
         'High durability and robust design',
@@ -25,7 +25,7 @@ const ProductSection = () => {
       images: [productImage7, productImage1, productImage2, productImage3]
     },
     {
-      title: 'Campy Pro v2 Grills',
+      title: 'Campy Pro AR-2 Grills',
       subtitle: 'Advanced Camping Grill',
       features: [
         'Enhanced durability',
@@ -119,9 +119,9 @@ const ProductSection = () => {
               ))}
             </ul>
             <div className="platforms">
-              <button onClick={() => window.open('https://www.amazon.com', '_blank')} className="platform-button">Amazon</button>
-              <button onClick={() => window.open('https://www.ebay.com', '_blank')} className="platform-button">eBay</button>
-              <button onClick={() => window.open('https://www.walmart.com', '_blank')} className="platform-button">Walmart</button>
+              <button onClick={() => window.open('https://www.amazon.com/s?me=A1CM5OURBNP9R9&marketplaceID=ATVPDKIKX0DER', '_blank')} className="platform-button">Amazon</button>
+              {/* <button onClick={() => window.open('https://www.ebay.com', '_blank')} className="platform-button">eBay</button>
+              <button onClick={() => window.open('https://www.walmart.com', '_blank')} className="platform-button">Walmart</button> */}
             </div>
           </div>
         </div>
